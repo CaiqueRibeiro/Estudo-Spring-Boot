@@ -22,7 +22,6 @@ public class ItemPedido implements Serializable {
 	public ItemPedido() {
 		
 	}
-
 	
 	public ItemPedido(Pedido pedido, Produto produto, Double desconto, Double preco, Integer quantidade) {
 		super();
@@ -41,8 +40,7 @@ public class ItemPedido implements Serializable {
 	public Produto getProduto() {
 		return this.id.getProduto();
 	}
-	
-	
+		
 	public ItemPedidoPK getId() {
 		return id;
 	}
