@@ -29,7 +29,6 @@ public class Pedido implements Serializable {
 	
 	@JsonFormat(pattern="dd/MM/yyyy HH:mm")
 	private Date instante;
-	
 
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="pedido")
 	private Pagamento pagamento;
@@ -54,6 +53,15 @@ public class Pedido implements Serializable {
 		this.instante = instante;
 		this.cliente = cliente;
 		this.enderecoDeEntrega = enderecoDeEntrega;
+	}
+	
+	public Double getValorTotal() {
+		Double soma = 0.0;
+		for(ItemPedido ip : this.itens) {
+			soma += ip.getSubtotal();
+		}
+		
+		return soma;
 	}
 
 	public Integer getId() {
