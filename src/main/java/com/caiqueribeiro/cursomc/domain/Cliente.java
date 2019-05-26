@@ -36,6 +36,7 @@ public class Cliente implements Serializable {
 	private String cpfOuCnpj;
 	private Integer tipo;
 	
+	@JsonIgnore
 	private String senha;
 	
 	@ElementCollection(fetch=FetchType.EAGER)
