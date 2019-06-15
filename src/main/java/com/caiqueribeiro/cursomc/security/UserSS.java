@@ -47,6 +47,10 @@ public class UserSS implements UserDetails {
 	public String getUsername() {
 		return email;
 	}
+	
+	public boolean hasRole(Perfil perfil) {
+		return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescricao()));
+	}
 
 	@Override
 	public boolean isAccountNonExpired() {
